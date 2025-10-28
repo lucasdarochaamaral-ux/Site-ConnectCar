@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #ea580c;
+  --primary-light: #fb923c;
+  --primary-dark: #c2410c;
+  --secondary: #212121;
+  --secondary-light: #484848;
+  --secondary-dark: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+}
+
+/* Adiciona espaço para o header fixo */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Melhorias de contraste e visibilidade */
+.text-gray-200 {
+  color: #e5e7eb !important; /* Mais claro para melhor contraste em fundos escuros */
+}
+
+.text-gray-600 {
+  color: #4b5563 !important; /* Mais escuro para melhor contraste em fundos claros */
+}
+
+/* Destaque para botões */
+.btn-primary {
+  @apply bg-orange-600 hover:bg-orange-700 text-white font-medium transition-all;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Estilos para carrossel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.carousel-slide {
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  width: 16px;
+  background-color: white;
+}
+
+/* Estilos para botão flutuante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Melhorar contraste em mobile */
+  .mobile-contrast {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+
